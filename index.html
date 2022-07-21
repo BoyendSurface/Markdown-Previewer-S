@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <title>Bootstrap demo</title>
+        <script src="./js/marked.js"></script>
+        
+    </head>
+    <body onload="setDefualt()">
+        <div class="container-fluid">
+            <div class="row">
+            <div class="col text-center text-white bg-success">
+                <h1>Markdown Preview</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 bg-primary">
+                <p>The Editor</p>
+                <textarea id="editor" onkeyup="updPrev()"></textarea>
+            </div>
+            <div class="col-6 bg-danger">
+                <p>The Markdown Previewer Space</p>
+                <div id="preview"></div>
+            </div>
+            </div>
+        </div>
+
+
+
+<script>
+
+    function updPrev() {
+        let previewElement = document.getElementById("preview")
+        let editorValue = document.getElementById("editor").value
+        let markedUpHTML = editorValue;
+        previewElement.innerHTML = markedUpHTML;
+    }
+    function setDefualt() {
+        let defaultText = `
+# Awesome Markdown
+## Mask down
+<dl>
+<dt>First Term</dt>
+<dd>This is the definition of the first term.</dd>
+<dt>Second Term</dt>
+<dd>This is one definition of the second term. </dd>
+<dd>This is another definition of the second term.</dd>
+</dl>
+
+\`About time to excute your knowldge\`
+
+\'\'\'
+function assess () {
+    return multiLineBlock
+}
+\'\'\'
+
+- Better
+- Be Wise
+- And Aware
+- with good Vibe
+- Be the master of your life
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
+My favorite search engine is [saver](https://google.com).
+[![Build Stuff](http://www.google.com.au/images/nav_logo7.png)]
+**My first Markdown**
+`
+
+        let editorField = document.getElementById("editor")
+        let previewElement = document.getElementById("preview")
+        editorField.innerHTML = defaultText;
+        previewElement.innerHTML = defaultText
+    }
+</script>
+
+
+
+
+
+
+
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
